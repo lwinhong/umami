@@ -27,6 +27,7 @@ const dest = path.resolve(__dirname, '../geo');
 if (!fs.existsSync(dest)) {
   fs.mkdirSync(dest);
 }
+if (fs.existsSync(path.join(dest, 'GeoLite2-City.mmdb'))) return;
 
 const download = url =>
   new Promise(resolve => {

@@ -118,6 +118,10 @@ docker compose pull
 docker compose up --force-recreate -d
 ```
 
+```bash
+docker build -t umami:latest .
+```
+
 ---
 
 ## 🛟 Support
