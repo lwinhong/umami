@@ -102,6 +102,7 @@ export interface WebsiteEventMetric {
 }
 
 export interface WebsiteEventData {
+  event_date: string | number | Date;
   eventName?: string;
   propertyName: string;
   dataType: number;
@@ -158,6 +159,7 @@ export interface QueryFilters {
   event?: string;
   search?: string;
   tag?: string;
+  dataKey?: string;
   cohort?: { [key: string]: string };
 }
 
