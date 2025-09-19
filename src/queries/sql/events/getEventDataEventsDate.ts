@@ -21,7 +21,7 @@ async function relationalQuery(websiteId: string, filters: QueryFilters) {
     return rawQuery(
       `
       select
-        DATE(DATE_TRUNC('day', event_data.created_at AT TIME ZONE 'UTC' AT TIME ZONE {{timezone}} )) AS event_date,
+        DATE(DATE_TRUNC('day', event_data.created_at)) AS event_date,
         COUNT(event_data.STRING_VALUE) as count,
         event_data.STRING_VALUE as string_value
       from event_data
@@ -41,7 +41,7 @@ async function relationalQuery(websiteId: string, filters: QueryFilters) {
   return rawQuery(
     `
     select
-        DATE(DATE_TRUNC('day', event_data.created_at AT TIME ZONE 'UTC' AT TIME ZONE {{timezone}} )) AS event_date,
+        DATE(DATE_TRUNC('day', event_data.created_at)) AS event_date,
         COUNT(event_data.STRING_VALUE) as count,
         event_data.STRING_VALUE as string_value
       from event_data
