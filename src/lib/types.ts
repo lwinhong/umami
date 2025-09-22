@@ -161,6 +161,9 @@ export interface QueryFilters {
   tag?: string;
   dataKey?: string;
   cohort?: { [key: string]: string };
+  stringValue?: string;
+  page?: number;
+  limit?: number;
 }
 
 export interface QueryOptions {
