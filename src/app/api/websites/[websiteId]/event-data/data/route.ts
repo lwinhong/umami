@@ -16,8 +16,8 @@ export async function GET(
     // timezone: z.string().optional(),
     dataKey: z.string().optional(),
     stringValue: z.string().optional(),
-    page: z.number().int().optional(),
-    limit: z.number().int().optional(),
+    page: z.coerce.number().int().optional(),
+    limit: z.coerce.number().int().optional(),
   });
   const { auth, query, error } = await parseRequest(request, schema);
 
@@ -41,8 +41,8 @@ export async function GET(
     // timezone,
     event,
     stringValue,
-    page,
-    limit,
+    page: Number(page || 1),
+    limit: Number(limit || 100),
     dataKey,
   });
   const formatStr = 'yyyy-MM-dd HH:mm:ss';
