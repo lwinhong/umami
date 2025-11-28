@@ -42,4 +42,5 @@ yarn-error.log*
 
 *.dev.yml
 volumes
+volumes_bak
 dev-sql
